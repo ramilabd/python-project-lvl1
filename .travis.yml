@@ -1,0 +1,22 @@
+language: python
+python:
+  - "3.8" # current default Python on Travis CI
+
+  # command to install poetry
+before_install:
+  - python3 -m pip install poetry
+
+  # command to install dependencies
+install:
+  - make install
+
+  # command to run tests
+script:
+  - make build
+
+notifications:
+  email:
+    recepients:
+      - ramsmart@mail.ru
+    on_success: never
+    on_failure: always

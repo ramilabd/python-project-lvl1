@@ -1,0 +1,40 @@
+[tool.poetry]
+authors = [
+  "Ramil Abdurakhmanov <ramsmart@mail.ru>",
+]
+classifiers = [
+  "Topic :: Games/Entertainment",
+  "Environment :: Console",
+  "Programming Language :: Python :: 3.8",
+  "Operating System :: POSIX :: Linux",
+  "Operating System :: Microsoft :: Windows",
+  "Natural Language :: English",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+]
+description = "This is the first training project from the Python-developer profession on Hexlet.io."
+license = "GPL-3.0-only"
+name = "hexlet_code"
+packages = [
+  {include = "brain_games"},
+]
+repository = "https://github.com/ramilabd/python-project-lvl1"
+version = "1.0.0"
+
+[tool.poetry.scripts]
+brain-calc = "brain_games.scripts.brain_calc:main"
+brain-even = "brain_games.scripts.brain_even:main"
+brain-games = "brain_games.scripts.brain_games:main"
+brain-gcd = "brain_games.scripts.brain_gcd:main"
+brain-prime = "brain_games.scripts.brain_prime:main"
+brain-progression = "brain_games.scripts.brain_progression:main"
+
+[tool.poetry.dependencies]
+prompt = "^0.4.1"
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+wemake-python-styleguide = "^0.14.1"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]

@@ -1,0 +1,10 @@
+*.egg-info
+__pycache__
+dist/
+*.pyc
+.venv/
+
+asciinema/
+.vscode/
+
+tests/
