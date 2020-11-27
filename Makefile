@@ -1,11 +1,11 @@
 install:
 	poetry install
 
+package-install: build
+	python3 -m pip install --user dist/*.whl
+
 run:
 	poetry run brain-games
-
-#test:
-#	poetry run pytest hexlet_python_package tests
 
 lint:
 	poetry run flake8 brain_games
@@ -13,7 +13,7 @@ lint:
 selfcheck:
 	poetry check
 
-check: selfcheck lint    # add a test later
+check: selfcheck lint
 
 build: check
 	poetry build
