@@ -1,11 +1,11 @@
 # -*- coding:utf-8 -*-
 
-"""Run the game."""
+"""Welcome user."""
 
-from brain_games.view import greeting, say_hello
+import prompt
 
 
-def run():
+def welcome_user():
     """
     Welcome to the game.
 
@@ -13,5 +13,6 @@ def run():
 
     Returns: None
     """
-    greeting()
-    say_hello()
+    print('Welcome to the Brain Games!')
+    name_user = prompt.string('May I have your name? ')
+    print('Hello, {0}!\n\n'.format(name_user))

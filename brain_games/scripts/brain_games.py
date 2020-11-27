@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-"""Welcome script."""
+"""A greeting to the user."""
 
-from brain_games.cli import run
+from brain_games.cli import welcome_user
 
 
 def main():
@@ -14,7 +14,7 @@ def main():
 
     Returns: None
     """
-    run()
+    welcome_user()
 
 
 if __name__ == '__main__':
