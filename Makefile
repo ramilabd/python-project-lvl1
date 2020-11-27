@@ -22,4 +22,7 @@ publish: check
 	poetry build
 	poetry publish -r testpypi
 
+brain-games:
+	@poetry run brain-games
+
 .PHONY: install test lint selfcheck check build
