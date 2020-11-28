@@ -23,10 +23,7 @@ def generator_task_and_solution():
     Returns:
         tuple
     """
-    func_get_progression = choice(
-        [get_arithmetic_progression, get_arithmetic_progression_higher_order],
-    )
-    sequence = func_get_progression()
+    sequence = get_arithmetic_progression()
 
     correct_answer = choice(sequence)
     task = (
@@ -57,27 +54,6 @@ def get_arithmetic_progression():
         start = operation(start, step)
         sequence.append(start)
         len_sequence -= 1
-
-    return sequence
-
-
-def get_arithmetic_progression_higher_order():
-    """
-    Generate a higher-order arithmetic progression.
-
-    Parameters are missing.
-
-    Returns:
-        list
-    """
-    start = randint(START_MIN, START_MAX)
-    len_sequence = LEN_SEQUENCE
-    sequence = []
-
-    while len_sequence:
-        sequence.append(start ** 2)
-        len_sequence -= 1
-        start += 1
 
     return sequence
 
