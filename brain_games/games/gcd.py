@@ -9,9 +9,9 @@ from random import randint
 GAME_RULE = 'Find the greatest common divisor of given numbers.'
 
 
-def generator_task_and_solution():
+def get_task_and_solution():
     """
-    Get two numbers and the greatest common divisor.
+    Get two numbers (task) and the greatest common divisor.
 
     Parameters are missing.
 
