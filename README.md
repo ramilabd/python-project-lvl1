@@ -2,7 +2,6 @@
 
 [![Actions Status](https://github.com/ramilabd/python-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/ramilabd/python-project-lvl1/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/e9b5eff043ebd208327d/maintainability)](https://codeclimate.com/github/ramilabd/python-project-lvl1/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/e9b5eff043ebd208327d/test_coverage)](https://codeclimate.com/github/ramilabd/python-project-lvl1/test_coverage)
 [![Build Status](https://travis-ci.com/ramilabd/python-project-lvl1.svg?branch=main)](https://travis-ci.com/ramilabd/python-project-lvl1)
 [![time tracker](https://wakatime.com/badge/github/ramilabd/python-project-lvl1.svg)](https://wakatime.com/badge/github/ramilabd/python-project-lvl1)
 [![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
