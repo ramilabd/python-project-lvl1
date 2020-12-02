@@ -16,9 +16,9 @@ math_operations = {
 }
 
 
-def generate_math_operation():
+def get_math_operation():
     """
-    Generate a random mathematical operation.
+    Get a random mathematical operation.
 
     Parameters are missing.
 
@@ -28,9 +28,9 @@ def generate_math_operation():
     return choice(list(math_operations.keys()))
 
 
-def generator_task_and_solution():
+def get_task_and_solution():
     """
-    Generate a mathematical expression.
+    Get a mathematical expression (task) and correct answer.
 
     Parameters are missing.
 
@@ -39,7 +39,7 @@ def generator_task_and_solution():
     """
     number1 = randint(1, 10)
     number2 = randint(1, 10)
-    math_operator = generate_math_operation()
+    math_operator = get_math_operation()
     correct_answer = math_operations[math_operator](number1, number2)
 
     task = ' '.join(map(str, (number1, math_operator, number2)))
