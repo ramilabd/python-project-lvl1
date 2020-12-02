@@ -14,9 +14,9 @@ STEP_MAX = 10
 LEN_SEQUENCE = 10
 
 
-def generator_task_and_solution():
+def get_task_and_solution():
     """
-    Get a tuple of integers and a hidden number.
+    Get a tuple of integers (task) and a hidden number (correct answer).
 
     Parameters are missing.
 
@@ -36,7 +36,7 @@ def generator_task_and_solution():
 
 def get_arithmetic_progression():
     """
-    Generate an arithmetic progression.
+    Get an arithmetic progression.
 
     Parameters are missing.
 
