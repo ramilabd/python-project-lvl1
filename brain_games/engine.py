@@ -28,7 +28,7 @@ def game_loop(game_module):
 
     counter = 0
     while counter < ROUNDS:
-        task, correct_answer = game_module.generator_task_and_solution()
+        task, correct_answer = game_module.get_task_and_solution()
         show_task(task)
         answer_user = get_answer_user(game_module)
         if answer_user == correct_answer:
