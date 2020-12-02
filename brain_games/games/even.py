@@ -7,9 +7,9 @@ from random import randint
 GAME_RULE = 'Answer "yes" if number even otherwise answer "no".'
 
 
-def generator_task_and_solution():
+def get_task_and_solution():
     """
-    Generate an integer in a specific range.
+    Get an integer(task) and correct answer.
 
     Parameters are missing.
 
