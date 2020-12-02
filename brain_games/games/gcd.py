@@ -21,8 +21,8 @@ def get_task_and_solution():
     number1 = randint(1, 100)
     number2 = randint(1, 100)
     correct_answer = gcd(number1, number2)
+    task = '{0} {1}'.format(number1, number2)
 
-    task = ' '.join(map(str, (number1, number2)))
     return task, correct_answer
 
 
