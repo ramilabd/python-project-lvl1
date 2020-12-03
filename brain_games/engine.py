@@ -2,12 +2,12 @@
 
 """Game engine."""
 
+from brain_games.cli import welcome_user
 from brain_games.view import (
     confirm_correct_answer,
-    get_answer_user,
-    greeting,
-    say_hello,
+    get_correct_answer_user,
     show_game_over,
+    show_rules_game,
     show_task,
 )
 
@@ -23,14 +23,14 @@ def game_loop(game_module):
 
     Returns: None
     """
-    greeting(game_module.GAME_RULE)
-    name_user = say_hello()
+    name_user = welcome_user()
+    show_rules_game(game_module)
 
     counter = 0
     while counter < ROUND:
         task, correct_answer = game_module.get_task_and_solution()
         show_task(task)
-        answer_user = get_answer_user(game_module)
+        answer_user = get_correct_answer_user(game_module)
         if answer_user == correct_answer:
             confirm_correct_answer()
             counter += 1
