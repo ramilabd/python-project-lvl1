@@ -7,12 +7,6 @@ from random import choice, randint
 
 GAME_RULE = 'What number is missing in the progression?'
 
-START_MIN = 1
-START_MAX = 10
-STEP_MIN = 1
-STEP_MAX = 10
-LEN_SEQUENCE = 10
-
 
 def get_task_and_solution():
     """
@@ -36,23 +30,21 @@ def get_task_and_solution():
 
 def get_arithmetic_progression():
     """
-    Get an arithmetic progression.
+    Get an increasing arithmetic progression.
 
     Parameters are missing.
 
     Returns:
         list
     """
-    start = randint(START_MIN, START_MAX)
-    step = randint(STEP_MIN, STEP_MAX)
-    len_sequence = LEN_SEQUENCE
+    start = randint(1, 10)
+    step = randint(1, 10)
+    len_sequence = 10
     sequence = []
 
-    operation = choice([add, sub])
-
     while len_sequence:
-        start = operation(start, step)
         sequence.append(start)
+        start = add(start, step)
         len_sequence -= 1
 
     return sequence
