@@ -2,7 +2,6 @@
 
 """Functions of the game "Brain-progression."""
 
-from operator import add, sub
 from random import choice, randint
 
 GAME_RULE = 'What number is missing in the progression?'
@@ -44,7 +43,7 @@ def get_arithmetic_progression():
 
     while len_sequence:
         sequence.append(start)
-        start = add(start, step)
+        start += step
         len_sequence -= 1
 
     return sequence
