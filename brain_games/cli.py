@@ -11,8 +11,10 @@ def welcome_user():
 
     Parameters are missing.
 
-    Returns: None
+    Returns:
+        None
     """
     print('Welcome to the Brain Games!')
     name_user = prompt.string('May I have your name? ')
-    print('Hello, {0}!\n\n'.format(name_user))
+    print('Hello, {0}!'.format(name_user))
+    return name_user
