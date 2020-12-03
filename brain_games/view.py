@@ -7,35 +7,16 @@ from sys import exit
 import prompt
 
 
-def greeting(game_rules=None):
+def show_rules_game(game_module):
     """
-    Show a greeting and rules of the game.
+    Show the rules of the game.
 
     Parameters:
-        game_rules: str (by default == None)
+        game_module: module of the game
 
     Returns: None
     """
-    print('Welcome to the Brain Games!')
-    if game_rules:
-        print(game_rules)
-        print()
-    else:
-        print()
-
-
-def say_hello():
-    """
-    Greets the user.
-
-    Parameters are missing.
-
-    Returns:
-        str
-    """
-    name_user = prompt.string('May I have your name? ')
-    print('Hello, {0}!\n\n'.format(name_user))
-    return name_user
+    print(game_module.GAME_RULE)
 
 
 def show_task(task):
@@ -50,13 +31,13 @@ def show_task(task):
     print('Question: {0}'.format(task))
 
 
-def get_answer_user(game_module, tries=3):
+def get_correct_answer_user(game_module, tries=3):
     """
-    Get the user's response.
+    Get the correct user respons.
 
     Parameters:
         game_module: module of the game
-        tries: int (by default == 3)
+        tries: int
 
     Returns:
         str or int
@@ -65,26 +46,24 @@ def get_answer_user(game_module, tries=3):
         exit('Attempts ended. Start the game again.')
 
     answer_user = prompt.string('Your answer: ')
-    verified_answer = game_module.is_correct_data(answer_user)
+    game_name = game_module.__name__.rsplit('.')[-1]
 
-    if verified_answer[0]:
-        return verified_answer[1]
+    if game_name in {'calc', 'gcd', 'progression'}:
+        try:
+            return int(answer_user)
+        except ValueError:
+            print('{0} - invalid data, enter an integer.'.format(
+                answer_user,
+            ))
+            get_correct_answer_user(game_module, tries - 1)
+
+    if game_name in {'even', 'prime'} and answer_user in {'yes', 'no'}:
+        return answer_user
     else:
-        report_incorrect_data(verified_answer[1])
-
-    return get_answer_user(game_module, tries - 1)
-
-
-def report_incorrect_data(verified_answer):
-    """
-    Inform about incorrect data entry.
-
-    Parameters:
-        verified_answer: str
-
-    Returns: None
-    """
-    print(verified_answer)
+        print('{0} - invalid data, enter an "yes" or "no".'.format(
+            answer_user,
+        ))
+        get_correct_answer_user(game_module, tries - 1)
 
 
 def confirm_correct_answer(name_user=''):
@@ -99,7 +78,7 @@ def confirm_correct_answer(name_user=''):
     if name_user:
         print('Congratulations, {0}!'.format(name_user))
     else:
-        print('Correct')
+        print('Correct!')
 
 
 def show_game_over(answer_user, correct_answer, name_user):
