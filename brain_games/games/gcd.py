@@ -24,21 +24,3 @@ def get_task_and_solution():
     task = '{0} {1}'.format(number1, number2)
 
     return task, correct_answer
-
-
-def is_correct_data(answer_user):
-    """
-    Сhecks whether the input data is correct.
-
-    Parameters:
-        answer_user: str
-
-    Returns:
-        tuple
-    """
-    try:
-        return True, int(answer_user)
-    except ValueError:
-        return False, '{0} - invalid data, enter an integer.'.format(
-            answer_user,
-        )

@@ -47,21 +47,3 @@ def get_arithmetic_progression():
         len_sequence -= 1
 
     return sequence
-
-
-def is_correct_data(answer_user):
-    """
-    Сhecks whether the input data is correct.
-
-    Parameters:
-        answer_user: str
-
-    Returns:
-        tuple
-    """
-    try:
-        return True, int(answer_user)
-    except ValueError:
-        return False, '{0} - invalid data, enter an integer.'.format(
-            answer_user,
-        )

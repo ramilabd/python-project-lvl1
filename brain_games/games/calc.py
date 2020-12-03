@@ -16,18 +16,6 @@ math_operations = {
 }
 
 
-def get_math_operation():
-    """
-    Get a random mathematical operation.
-
-    Parameters are missing.
-
-    Returns:
-        str ('+' or '-' or '*')
-    """
-    return choice(list(math_operations.keys()))
-
-
 def get_task_and_solution():
     """
     Get a mathematical expression (task) and correct answer.
@@ -46,19 +34,13 @@ def get_task_and_solution():
     return task, correct_answer
 
 
-def is_correct_data(answer_user):
+def get_math_operation():
     """
-    Сhecks whether the input data is correct.
+    Get a random mathematical operation.
 
-    Parameters:
-        answer_user: str
+    Parameters are missing.
 
     Returns:
-        tuple
+        str ('+' or '-' or '*')
     """
-    try:
-        return True, int(answer_user)
-    except ValueError:
-        return False, '{0} - invalid data, enter an integer.'.format(
-            answer_user,
-        )
+    return choice(list(math_operations.keys()))
