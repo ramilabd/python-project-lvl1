@@ -2,7 +2,7 @@
 
 """The script start the game 'Brain-calc."""
 
-from brain_games.engine import game_loop
+from brain_games.engine import game_engine
 from brain_games.games import calc
 
 
@@ -14,7 +14,7 @@ def main():
 
     Returns: None
     """
-    game_loop(calc)
+    game_engine(calc)
 
 
 if __name__ == '__main__':

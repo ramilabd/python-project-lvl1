@@ -14,7 +14,7 @@ from brain_games.view import (
 ROUND = 3
 
 
-def game_loop(game_module):
+def game_engine(game_module):
     """
     Game engine.
 
