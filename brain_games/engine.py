@@ -11,7 +11,7 @@ from brain_games.view import (
     show_task,
 )
 
-ROUND = 3
+ROUNDS_COUNT = 3
 
 
 def game_engine(game_module):
@@ -27,7 +27,7 @@ def game_engine(game_module):
     show_rules_game(game_module)
 
     counter = 0
-    while counter < ROUND:
+    while counter < ROUNDS_COUNT:
         task, correct_answer = game_module.get_task_and_solution()
         show_task(task)
         answer_user = get_correct_answer_user(game_module)
@@ -37,5 +37,5 @@ def game_engine(game_module):
             continue
         show_game_over(answer_user, correct_answer, name_user)
         break
-    if counter == ROUND:
+    else:
         confirm_correct_answer(name_user)
