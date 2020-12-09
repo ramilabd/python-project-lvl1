@@ -2,7 +2,7 @@
 
 """Functions of the game "Brain-progression."""
 
-from random import choice, randint
+from random import choice
 
 GAME_RULE = 'What number is missing in the progression?'
 
@@ -27,18 +27,18 @@ def get_task_and_solution():
     return task, correct_answer
 
 
-def get_arithmetic_progression():
+def get_arithmetic_progression(start=3, step=5, len_sequence=10):
     """
     Get an increasing arithmetic progression.
 
-    Parameters are missing.
+    Parameters:
+        start: int (by default 3)
+        step: int (by default 5)
+        len_sequence: int (by default 10)
 
     Returns:
         list
     """
-    start = randint(1, 10)
-    step = randint(1, 10)
-    len_sequence = 10
     sequence = []
 
     while len_sequence:
