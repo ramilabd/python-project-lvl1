@@ -23,14 +23,12 @@ def game_engine(game_module):
     name_user = welcome_user()
     print(game_module.GAME_RULE)
 
-    counter = 0
-    while counter < ROUNDS_COUNT:
+    for _ in range(ROUNDS_COUNT):
         task, correct_answer = game_module.get_task_and_solution()
         print('Question: {0}'.format(task))
         answer_user = get_correct_answer_user(game_module)
         if answer_user == correct_answer:
             print('Correct!')
-            counter += 1
             continue
         show_game_over(answer_user, correct_answer, name_user)
         break
