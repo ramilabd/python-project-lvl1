@@ -23,12 +23,7 @@ def game_engine(game_module):
     name_user = welcome_user()
     print(game_module.GAME_RULE)
 
-<<<<<<< HEAD
-    counter = 0
-    while counter < ROUNDS_COUNT:
-=======
     for _ in range(ROUNDS_COUNT):
->>>>>>> develop
         task, correct_answer = game_module.get_task_and_solution()
         print('Question: {0}'.format(task))
         answer_user = get_correct_answer_user(game_module)
@@ -38,9 +33,6 @@ def game_engine(game_module):
         show_game_over(answer_user, correct_answer, name_user)
         break
     else:
-<<<<<<< HEAD
-        confirm_correct_answer(name_user)
-=======
         print('Congratulations, {0}!'.format(name_user))
 
 
@@ -95,4 +87,3 @@ def show_game_over(answer_user, correct_answer, name_user):
         correct_answer,
     ))
     print("Let's try again, {0}!".format(name_user))
->>>>>>> develop
