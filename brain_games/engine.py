@@ -8,10 +8,10 @@ import prompt
 
 from brain_games.cli import welcome_user
 
-ROUND = 3
+ROUNDS_COUNT = 3
 
 
-def game_loop(game_module):
+def game_engine(game_module):
     """
     Game engine.
 
@@ -24,7 +24,7 @@ def game_loop(game_module):
     print(game_module.GAME_RULE)
 
     counter = 0
-    while counter < ROUND:
+    while counter < ROUNDS_COUNT:
         task, correct_answer = game_module.get_task_and_solution()
         print('Question: {0}'.format(task))
         answer_user = get_correct_answer_user(game_module)
