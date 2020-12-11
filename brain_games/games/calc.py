@@ -27,20 +27,9 @@ def get_task_and_solution():
     """
     number1 = randint(1, 10)
     number2 = randint(1, 10)
-    math_operator = get_math_operation()
-    correct_answer = math_operations[math_operator](number1, number2)
+    math_symbol, math_operation = choice(list(math_operations.items()))
 
-    task = ' '.join(map(str, (number1, math_operator, number2)))
+    correct_answer = math_operation(number1, number2)
+    task = '{} {} {}'.format(number1, math_symbol, number2)
+
     return task, correct_answer
-
-
-def get_math_operation():
-    """
-    Get a random mathematical operation.
-
-    Parameters are missing.
-
-    Returns:
-        str ('+' or '-' or '*')
-    """
-    return choice(list(math_operations.keys()))
