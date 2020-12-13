@@ -25,11 +25,10 @@ def get_task_and_solution():
     Returns:
         tuple
     """
-    number1 = randint(1, 10)
-    number2 = randint(1, 10)
+    numbers = randint(1, 10), randint(1, 10)
     math_symbol, math_operation = choice(list(math_operations.items()))
 
-    correct_answer = math_operation(number1, number2)
-    task = '{} {} {}'.format(number1, math_symbol, number2)
+    correct_answer = math_operation(*numbers)
+    task = '{1} {0} {2}'.format(math_symbol, *numbers)
 
     return task, correct_answer
