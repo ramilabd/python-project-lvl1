@@ -6,27 +6,27 @@ from sys import exit
 
 import prompt
 
-from brain_games.cli import welcome_user
-
 ROUNDS_COUNT = 3
 
 
-def game_engine(game_module):
+def engine(game):
     """
     Game engine.
 
     Parameters:
-        game_module: module of the game
+        game: module of the game
 
     Returns: None
     """
-    name_user = welcome_user()
-    print(game_module.GAME_RULE)
+    print('Welcome to the Brain Games!')
+    name_user = prompt.string('May I have your name? ')
+    print('Hello, {0}!'.format(name_user))
+    print(game.GAME_RULE)
 
     for _ in range(ROUNDS_COUNT):
-        task, correct_answer = game_module.get_task_and_solution()
+        task, correct_answer = game.get_task_and_solution()
         print('Question: {0}'.format(task))
-        answer_user = get_correct_answer_user(game_module)
+        answer_user = get_correct_answer_user(game)
         if answer_user == correct_answer:
             print('Correct!')
             continue
@@ -36,39 +36,38 @@ def game_engine(game_module):
         print('Congratulations, {0}!'.format(name_user))
 
 
-def get_correct_answer_user(game_module, tries=3):
+def get_correct_answer_user(game):
     """
     Get the correct user respons.
 
     Parameters:
-        game_module: module of the game
-        tries: int
+        game: module of the game
 
     Returns:
         str or int
     """
-    if tries == 0:
-        exit('Attempts ended. Start the game again.')
+    tries_count = 3
+    game_name = game.__name__.rsplit('.')[-1]
 
-    answer_user = prompt.string('Your answer: ')
-    game_name = game_module.__name__.rsplit('.')[-1]
-
-    if game_name in {'calc', 'gcd', 'progression'}:
-        try:
-            return int(answer_user)
-        except ValueError:
-            print('{0} - invalid data, enter an integer.'.format(
+    for _ in range(tries_count):
+        answer_user = prompt.string('Your answer: ')
+        if game_name in {'calc', 'gcd', 'progression'}:
+            try:
+                return int(answer_user)
+            except ValueError:
+                print('{0} - invalid data, enter an integer.'.format(
+                    answer_user,
+                ))
+                continue
+        if game_name in {'even', 'prime'} and answer_user in {'yes', 'no'}:
+            return answer_user
+        else:
+            print('{0} - invalid data, enter an "yes" or "no".'.format(
                 answer_user,
             ))
-            get_correct_answer_user(game_module, tries - 1)
+            continue
 
-    if game_name in {'even', 'prime'} and answer_user in {'yes', 'no'}:
-        return answer_user
-    else:
-        print('{0} - invalid data, enter an "yes" or "no".'.format(
-            answer_user,
-        ))
-        get_correct_answer_user(game_module, tries - 1)
+    exit('Attempts ended. Start the game again.')
 
 
 def show_game_over(answer_user, correct_answer, name_user):
