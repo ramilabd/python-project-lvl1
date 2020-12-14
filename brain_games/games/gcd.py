@@ -16,11 +16,11 @@ def get_task_and_solution():
     Parameters are missing.
 
     Returns:
-        tuple
+        tuple: (int, str)
     """
     number1 = randint(1, 100)
     number2 = randint(1, 100)
     correct_answer = gcd(number1, number2)
     task = '{0} {1}'.format(number1, number2)
 
-    return task, correct_answer
+    return task, str(correct_answer)

@@ -23,7 +23,7 @@ def get_task_and_solution():
     Parameters are missing.
 
     Returns:
-        tuple
+        tuple: str
     """
     numbers = randint(1, 10), randint(1, 10)
     math_symbol, math_operation = choice(list(math_operations.items()))
@@ -31,4 +31,4 @@ def get_task_and_solution():
     correct_answer = math_operation(*numbers)
     task = '{1} {0} {2}'.format(math_symbol, *numbers)
 
-    return task, correct_answer
+    return task, str(correct_answer)

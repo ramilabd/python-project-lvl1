@@ -14,7 +14,7 @@ def get_task_and_solution():
     Parameters are missing.
 
     Returns:
-        tuple
+        tuple: (int, str)
     """
     task = randint(1, 101)
     correct_answer = 'yes' if is_prime(task) else 'no'

@@ -25,4 +25,4 @@ def get_task_and_solution():
         '..' if number == correct_answer else str(number) for number in sequence
     )
 
-    return task, correct_answer
+    return task, str(correct_answer)
