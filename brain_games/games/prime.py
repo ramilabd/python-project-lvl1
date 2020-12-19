@@ -36,9 +36,8 @@ def is_prime(number):
         return False
 
     divider = 2
-    max_divider = number // divider
 
-    while divider <= max_divider:
+    while divider <= number / 2:
         if number % divider == 0:
             return False
         divider += 1
