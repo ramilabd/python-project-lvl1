@@ -5,7 +5,7 @@
 from random import choice, randint
 
 GAME_RULE = 'What number is missing in the progression?'
-LEN_SEQUENCE = 10
+SEQUENCE_LENGTH = 10
 
 
 def get_task_and_solution():
@@ -18,7 +18,7 @@ def get_task_and_solution():
         tuple: (str, int)
     """
     start, step = randint(1, 10), randint(1, 10)
-    sequence = list(range(start, LEN_SEQUENCE * step + start, step))
+    sequence = list(range(start, SEQUENCE_LENGTH * step + start, step))
 
     correct_answer = choice(sequence)
     task = ' '.join(
